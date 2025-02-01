@@ -1,3 +1,19 @@
+// ---------------------------------------------------------------
+//
+// BE SURE TO REPLACE "mdb.es.min.js" FILE PATH ON EVERY FUNCTION
+//
+// ---------------------------------------------------------------
+
+/**
+ * Retrieves or creates an MDB Collapse instance for a given element ID.
+ * @param {string} id - The ID of the collapsible element to be initialized or retrieved.
+ */
+async function getOrCreateMdbCollapse(id) {
+    const { Collapse } = await import("../lib/MDB5/js/mdb.es.min.js");
+    const element = document.getElementById(id);
+    return Collapse.getOrCreateInstance(element);
+}
+
 /**
  * Shows the MDB Collapse element with the given ID.
  * @param {string} id - The ID of the collapsible element.

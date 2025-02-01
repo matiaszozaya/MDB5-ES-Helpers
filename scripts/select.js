@@ -1,3 +1,19 @@
+// ---------------------------------------------------------------
+//
+// BE SURE TO REPLACE "mdb.es.min.js" FILE PATH ON EVERY FUNCTION
+//
+// ---------------------------------------------------------------
+
+/**
+ * Retrieves or creates an MDB Select instance for a given element ID.
+ * @param {string} id - The ID of the select element to be initialized or retrieved.
+ */
+async function getOrCreateMdbSelect(id) {
+    const { Select } = await import("../lib/MDB5/js/mdb.es.min.js");
+    const element = document.getElementById(id);
+    return Select.getOrCreateInstance(element);
+}
+
 /**
  * Retrieves the value of the MDB Select element with the given ID.
  * @param {string} id - The ID of the select element.
